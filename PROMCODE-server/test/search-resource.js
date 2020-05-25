@@ -1,8 +1,9 @@
 neo4j = require("neo4j-driver");
+require("dotenv").config();
 
-const uri = "bolt://localhost";
-const user = "*****";
-const password = "*****";
+const uri = process.env.SERVER_URI;
+const user = process.env.NEO4J_USER;
+const password = process.env.NEO4J_PASSWORD;
 
 const driver = neo4j.driver(uri, neo4j.auth.basic(user, password)); //driverの設定
 const session = driver.session(); //session生成
