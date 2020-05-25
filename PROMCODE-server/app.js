@@ -9,14 +9,11 @@ const storage = multer.diskStorage({
     cb(null, file.originalname);
   }
 });
+
 //const path = require('path');
-
-app.listen(3000);
-console.log('\nServer is online.');
-
 //app.use(express.static(path.join(__dirname, 'turtle_sample')));
 
-app.get('/', function(req, res) {
+app.get('/', (req, res) => {
   res.send('Hello World\n');
   console.log(req.query.url);
 });
@@ -24,4 +21,8 @@ app.get('/', function(req, res) {
 app.post('/', multer({ storage: storage }).single('file'), (req, res) => {
   console.log('save to ' + req.file.path);
   res.send('uploaded: ' + req.body.filename + '\n');
+});
+
+app.listen(3000, () => {
+  console.log('\nServer is online.');
 });
