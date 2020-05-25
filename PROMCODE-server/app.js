@@ -1,6 +1,8 @@
 const express = require('express');
-const app = express();
 const multer = require('multer');
+const registerTurtle = require('./register-turtle.js');
+
+const app = express();
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, 'uploaded/');
@@ -10,16 +12,13 @@ const storage = multer.diskStorage({
   }
 });
 
-//const path = require('path');
-//app.use(express.static(path.join(__dirname, 'turtle_sample')));
-
 app.get('/', (req, res) => {
-  res.send('Hello World\n');
   console.log(req.query.url);
 });
 
 app.post('/', multer({ storage: storage }).single('file'), (req, res) => {
   console.log('save to ' + req.file.path);
+  registerTurtle(req.file.path);
   res.send('uploaded: ' + req.body.filename + '\n');
 });
 
