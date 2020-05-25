@@ -1,9 +1,18 @@
 const express = require('express');
 const app = express();
-const path = require('path');
+const multer = require('multer');
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'uploaded/');
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.originalname);
+  }
+});
+//const path = require('path');
 
 app.listen(3000);
-console.log('Server is online.');
+console.log('\nServer is online.');
 
 //app.use(express.static(path.join(__dirname, 'turtle_sample')));
 
@@ -12,4 +21,7 @@ app.get('/', function(req, res) {
   console.log(req.query.url);
 });
 
-// http://localhost:3000/?url=http://...
+app.post('/', multer({ storage: storage }).single('file'), (req, res) => {
+  console.log('save to ' + req.file.path);
+  res.send('uploaded: ' + req.body.filename + '\n');
+});
