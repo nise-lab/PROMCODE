@@ -11,6 +11,7 @@ const session = driver.session(); //session生成
 const query = "CALL semantics.importRDF(\"" + process.env.TURTLE_URI + "\",\"Turtle\")";
 //const query = "CALL semantics.importRDF(\"https://github.com/neo4j-labs/neosemantics/raw/3.5/docs/rdf/nsmntx.ttl\",\"Turtle\")";
 
+
 session
 .run(query)
 .subscribe({
