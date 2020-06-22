@@ -1,0 +1,10 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix oslc_promcode: <http://open-services.net/ns/promcode#> .
+
+<http://example.com/pm/projects/100>
+  a oslc_promcode:Project ;
+  dcterms:title "PJ1" ;
+  oslc_promcode:plannedStartDate "2017-03-01T00:00:00Z" ;
+  oslc_promcode:plannedEndDate "2017-12-31T00:00:00Z" ;
+  oslc_promcode:metricOfScopeItemSize <http://example.com/metric#Effort> ;
+  oslc_promcode:unitOfScopeItemSize <http://example.com/unit#PersonMonth> .

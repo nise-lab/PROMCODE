@@ -1,0 +1,5 @@
+@prefix oslc_promcode: <http://open-services.net/ns/promcode#> .
+
+<http://example.com/pm/projects/100/scopeItemContainer>
+  a oslc_promcode:ScopeItemContainer ;
+  oslc_promcode:scopeitemContainer <http://example.com/pm/projects/100> .

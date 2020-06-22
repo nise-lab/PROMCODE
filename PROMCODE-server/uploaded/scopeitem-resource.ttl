@@ -1,0 +1,10 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix oslc_promcode: <http://open-services.net/ns/promcode#> .
+@prefix ldp: <http://www.w3.org/ns/ldp#> .
+
+<http://example.com/pm/projects/100/scopeItemContainer/1010>
+  a oslc_promcode:ScopeItem ;
+  dcterms:title "SI1" ;
+  dcterms:description "UI for making a reservation" ;
+  oslc_promcode:plannedSize "20" ;
+  ldp:contains <http://example.com/pm/projects/100/scopeItemContainer> .
