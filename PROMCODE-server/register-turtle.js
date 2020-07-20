@@ -11,7 +11,8 @@ const registerTurtle = (turtle_path) => {
   const session = driver.session(); //session生成
   const file_path = path.join(__dirname, turtle_path);
 
-  const query = "CALL semantics.importRDF(\"file://" + file_path + "\",\"Turtle\")";
+  const query = "CALL n10s.rdf.import.fetch(\"file://" + file_path + "\",\"Turtle\")";
+  //const query = "CALL n10s.rdf.import.fetch(\"https://github.com/neo4j-labs/neosemantics/raw/3.5/docs/rdf/nsmntx.ttl\",\"Turtle\")"
 
   session
   .run(query)
