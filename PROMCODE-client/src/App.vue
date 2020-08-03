@@ -1,17 +1,19 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <FileSelectionBtn/>
+    <SubmissionBtn/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import FileSelectionBtn from "./components/FileSelectionBtn.vue"
+import SubmissionBtn from "./components/SubmissionBtn.vue"
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    FileSelectionBtn,
+    SubmissionBtn
   }
 }
 </script>
