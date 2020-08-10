@@ -1,7 +1,7 @@
 <template>
   <div id="post-section">
     <FileSelectionBtn v-on:register-data="registerPostData"/>
-    <SubmissionBtn/>
+    <SubmissionBtn v-on:post-file="postFile"/>
   </div>
 </template>
 
@@ -13,7 +13,7 @@ export default {
   name: "PostSection",
   data: function() {
     return {
-      postData: ""
+      postData: null
     }
   },
   components: {
@@ -23,6 +23,9 @@ export default {
   methods: {
     registerPostData: function(data) {
       this.postData = data
+    },
+    postFile: function() {
+      console.log(this.postData)
     }
   }
 }
