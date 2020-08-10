@@ -19,6 +19,8 @@ app.get('/', (req, res) => {
 app.post('/', multer({ storage: storage }).single('file'), (req, res) => {
   console.log('save to ' + req.file.path);
   registerTurtle(req.file.path);
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.send('uploaded: ' + req.body.filename + '\n');
 });
 
