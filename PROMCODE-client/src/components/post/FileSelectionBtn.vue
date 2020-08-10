@@ -9,8 +9,7 @@ export default {
   name: "FileSelectionBtn",
   methods: {
     selectFile: function(e) {
-      console.log(e);
-      console.log(e.target.files);
+      this.$emit("register-data", e.target.files[0])
     }
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <div id="post-section">
-    <FileSelectionBtn/>
+    <FileSelectionBtn v-on:register-data="registerPostData"/>
     <SubmissionBtn/>
   </div>
 </template>
@@ -11,12 +11,19 @@ import SubmissionBtn from "./post/SubmissionBtn.vue"
 
 export default {
   name: "PostSection",
-  data: {
-    postData: ""
+  data: function() {
+    return {
+      postData: ""
+    }
   },
   components: {
     FileSelectionBtn,
     SubmissionBtn
+  },
+  methods: {
+    registerPostData: function(data) {
+      this.postData = data
+    }
   }
 }
 </script>
