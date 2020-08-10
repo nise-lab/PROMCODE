@@ -1,19 +1,16 @@
 <template>
   <div id="app">
-    <FileSelectionBtn/>
-    <SubmissionBtn/>
+    <PostSection/>
   </div>
 </template>
 
 <script>
-import FileSelectionBtn from "./components/FileSelectionBtn.vue"
-import SubmissionBtn from "./components/SubmissionBtn.vue"
+import PostSection from "./components/PostSection.vue"
 
 export default {
   name: 'App',
   components: {
-    FileSelectionBtn,
-    SubmissionBtn
+    PostSection
   }
 }
 </script>
