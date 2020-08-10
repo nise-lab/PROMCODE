@@ -9,7 +9,7 @@ export default {
   name: "SubmissionBtn",
   methods: {
     submit: function() {
-      this.$emit("post-file")
+      this.$emit("post-file");
     }
   }
 }

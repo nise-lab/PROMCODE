@@ -6,8 +6,9 @@
 </template>
 
 <script>
-import FileSelectionBtn from "./post/FileSelectionBtn.vue"
-import SubmissionBtn from "./post/SubmissionBtn.vue"
+import axios from "axios";
+import FileSelectionBtn from "./post/FileSelectionBtn.vue";
+import SubmissionBtn from "./post/SubmissionBtn.vue";
 
 export default {
   name: "PostSection",
@@ -25,10 +26,29 @@ export default {
       this.postData = data
     },
     postFile: function() {
-      console.log(this.postData)
+      console.log("breakpoint")
+      if (this.postData != null) {
+        console.log("breakpoint2")
+        const params = new FormData()
+        params.append("file", this.postData)
+        axios.post(
+          "http://localhost:3000",
+          params,
+          {
+            headers: {
+              "content-type": "text/turtle"
+            }
+          }
+        ).then(function() {
+          console.log("post success");
+        }).catch(function() {
+          console.log("post failure");
+        })
+        this.postData = null
+      }
     }
   }
-}
+};
 </script>
 
 <style scoped>

@@ -9,10 +9,10 @@ export default {
   name: "FileSelectionBtn",
   methods: {
     select: function(e) {
-      this.$emit("register-data", e.target.files[0])
+      this.$emit("register-data", e.target.files[0]);
     }
   }
-}
+};
 </script>
 
 <style scoped>
